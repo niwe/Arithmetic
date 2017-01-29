@@ -14,6 +14,9 @@
 		357EB2531E3DD49D000945F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 357EB2511E3DD49D000945F4 /* LaunchScreen.storyboard */; };
 		357EB25E1E3DD49D000945F4 /* ArithmeticTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357EB25D1E3DD49D000945F4 /* ArithmeticTests.swift */; };
 		357EB2691E3DD49E000945F4 /* ArithmeticUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357EB2681E3DD49E000945F4 /* ArithmeticUITests.swift */; };
+		357EB2771E3E1031000945F4 /* ArithmeticCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357EB2761E3E1031000945F4 /* ArithmeticCell.swift */; };
+		357EB2791E3E1440000945F4 /* Arithmetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357EB2781E3E1440000945F4 /* Arithmetic.swift */; };
+		357EB27B1E3E1462000945F4 /* ArithmeticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357EB27A1E3E1462000945F4 /* ArithmeticManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		357EB2641E3DD49E000945F4 /* ArithmeticUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArithmeticUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		357EB2681E3DD49E000945F4 /* ArithmeticUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArithmeticUITests.swift; sourceTree = "<group>"; };
 		357EB26A1E3DD49E000945F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		357EB2761E3E1031000945F4 /* ArithmeticCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArithmeticCell.swift; sourceTree = "<group>"; };
+		357EB2781E3E1440000945F4 /* Arithmetic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arithmetic.swift; sourceTree = "<group>"; };
+		357EB27A1E3E1462000945F4 /* ArithmeticManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArithmeticManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +104,14 @@
 			isa = PBXGroup;
 			children = (
 				357EB2481E3DD49D000945F4 /* AppDelegate.swift */,
+				357EB2761E3E1031000945F4 /* ArithmeticCell.swift */,
 				357EB24A1E3DD49D000945F4 /* ViewController.swift */,
 				357EB24C1E3DD49D000945F4 /* Main.storyboard */,
 				357EB24F1E3DD49D000945F4 /* Assets.xcassets */,
 				357EB2511E3DD49D000945F4 /* LaunchScreen.storyboard */,
 				357EB2541E3DD49D000945F4 /* Info.plist */,
+				357EB2781E3E1440000945F4 /* Arithmetic.swift */,
+				357EB27A1E3E1462000945F4 /* ArithmeticManager.swift */,
 			);
 			path = Arithmetic;
 			sourceTree = "<group>";
@@ -262,6 +271,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				357EB27B1E3E1462000945F4 /* ArithmeticManager.swift in Sources */,
+				357EB2791E3E1440000945F4 /* Arithmetic.swift in Sources */,
+				357EB2771E3E1031000945F4 /* ArithmeticCell.swift in Sources */,
 				357EB24B1E3DD49D000945F4 /* ViewController.swift in Sources */,
 				357EB2491E3DD49D000945F4 /* AppDelegate.swift in Sources */,
 			);
