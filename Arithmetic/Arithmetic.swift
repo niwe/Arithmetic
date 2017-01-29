@@ -14,7 +14,7 @@ protocol Arithmetic
     var symbol: String {get set}
     var id: String {get set}
     
-    var difficulties: String {get set}
+    var difficulties: [String] {get set}
     
     /*
     init (id: String, title: String, symbol: String)

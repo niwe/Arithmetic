@@ -11,6 +11,7 @@
 		3546CB591E3E4B8D00352AAC /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3546CB581E3E4B8D00352AAC /* QuestionViewController.swift */; };
 		3546CB5C1E3E7C0300352AAC /* Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3546CB5B1E3E7C0300352AAC /* Addition.swift */; };
 		3546CB5E1E3E816600352AAC /* Subtraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3546CB5D1E3E816600352AAC /* Subtraction.swift */; };
+		3546CB601E3E84E100352AAC /* Multiplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3546CB5F1E3E84E100352AAC /* Multiplication.swift */; };
 		357EB2491E3DD49D000945F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357EB2481E3DD49D000945F4 /* AppDelegate.swift */; };
 		357EB24B1E3DD49D000945F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357EB24A1E3DD49D000945F4 /* ViewController.swift */; };
 		357EB24E1E3DD49D000945F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 357EB24C1E3DD49D000945F4 /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 		3546CB581E3E4B8D00352AAC /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		3546CB5B1E3E7C0300352AAC /* Addition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Addition.swift; sourceTree = "<group>"; };
 		3546CB5D1E3E816600352AAC /* Subtraction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subtraction.swift; sourceTree = "<group>"; };
+		3546CB5F1E3E84E100352AAC /* Multiplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Multiplication.swift; sourceTree = "<group>"; };
 		357EB2451E3DD49D000945F4 /* Arithmetic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arithmetic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		357EB2481E3DD49D000945F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		357EB24A1E3DD49D000945F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			children = (
 				3546CB5B1E3E7C0300352AAC /* Addition.swift */,
 				3546CB5D1E3E816600352AAC /* Subtraction.swift */,
+				3546CB5F1E3E84E100352AAC /* Multiplication.swift */,
 			);
 			name = Arithmetics;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				357EB27D1E3E18FB000945F4 /* DifficultyCell.swift in Sources */,
 				3546CB591E3E4B8D00352AAC /* QuestionViewController.swift in Sources */,
 				3546CB571E3E36F300352AAC /* DifficultyManager.swift in Sources */,
+				3546CB601E3E84E100352AAC /* Multiplication.swift in Sources */,
 				357EB2491E3DD49D000945F4 /* AppDelegate.swift in Sources */,
 				3546CB5C1E3E7C0300352AAC /* Addition.swift in Sources */,
 			);
