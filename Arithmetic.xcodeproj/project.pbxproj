@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3546CB571E3E36F300352AAC /* DifficultyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3546CB561E3E36F300352AAC /* DifficultyManager.swift */; };
 		357EB2491E3DD49D000945F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357EB2481E3DD49D000945F4 /* AppDelegate.swift */; };
 		357EB24B1E3DD49D000945F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357EB24A1E3DD49D000945F4 /* ViewController.swift */; };
 		357EB24E1E3DD49D000945F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 357EB24C1E3DD49D000945F4 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3546CB561E3E36F300352AAC /* DifficultyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DifficultyManager.swift; sourceTree = "<group>"; };
 		357EB2451E3DD49D000945F4 /* Arithmetic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arithmetic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		357EB2481E3DD49D000945F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		357EB24A1E3DD49D000945F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				357EB27A1E3E1462000945F4 /* ArithmeticManager.swift */,
 				357EB2761E3E1031000945F4 /* ArithmeticCell.swift */,
 				357EB24A1E3DD49D000945F4 /* ViewController.swift */,
+				3546CB561E3E36F300352AAC /* DifficultyManager.swift */,
 				357EB27E1E3E1A5B000945F4 /* DifficultyViewController.swift */,
 				357EB27C1E3E18FB000945F4 /* DifficultyCell.swift */,
 				357EB2801E3E1A6B000945F4 /* QuestionViewController.swift */,
@@ -287,6 +290,7 @@
 				357EB24B1E3DD49D000945F4 /* ViewController.swift in Sources */,
 				357EB27D1E3E18FB000945F4 /* DifficultyCell.swift in Sources */,
 				357EB2811E3E1A6B000945F4 /* QuestionViewController.swift in Sources */,
+				3546CB571E3E36F300352AAC /* DifficultyManager.swift in Sources */,
 				357EB2491E3DD49D000945F4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -538,6 +542,7 @@
 				357EB26F1E3DD49E000945F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		357EB2701E3DD49E000945F4 /* Build configuration list for PBXNativeTarget "ArithmeticTests" */ = {
 			isa = XCConfigurationList;
@@ -546,6 +551,7 @@
 				357EB2721E3DD49E000945F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		357EB2731E3DD49E000945F4 /* Build configuration list for PBXNativeTarget "ArithmeticUITests" */ = {
 			isa = XCConfigurationList;
@@ -554,6 +560,7 @@
 				357EB2751E3DD49E000945F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -29,6 +29,19 @@ class DifficultyViewController: UICollectionViewController
         // Do any additional setup after loading the view.
         
         //self.title = preArithmetic?.title
+        
+        if (preArithmetic?.id == "multi")
+        {
+            DifficultyManager.AddDifficulty(title: "1")
+            DifficultyManager.AddDifficulty(title: "2")
+            DifficultyManager.AddDifficulty(title: "3")
+            DifficultyManager.AddDifficulty(title: "4")
+            DifficultyManager.AddDifficulty(title: "5")
+            DifficultyManager.AddDifficulty(title: "6")
+            DifficultyManager.AddDifficulty(title: "7")
+            DifficultyManager.AddDifficulty(title: "8")
+            DifficultyManager.AddDifficulty(title: "9")
+        }
     }
 
     override func didReceiveMemoryWarning()
@@ -52,14 +65,14 @@ class DifficultyViewController: UICollectionViewController
     override func numberOfSections(in collectionView: UICollectionView) -> Int
     {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return DifficultyManager.difficulty.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
@@ -67,9 +80,12 @@ class DifficultyViewController: UICollectionViewController
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "customcell2", for: indexPath) as! DifficultyCell
     
         // Configure the cell
+        cell.title.text = DifficultyManager.difficulty[indexPath.item]
         
         return cell
     }
+    
+    
 
     // MARK: UICollectionViewDelegate
 
