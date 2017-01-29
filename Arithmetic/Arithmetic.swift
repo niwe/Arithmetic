@@ -8,16 +8,20 @@
 
 import UIKit
 
-class Arithmetic: NSObject
+protocol Arithmetic
 {
-    var title: String
-    var symbol: String
-    var id: String
+    var title: String {get set}
+    var symbol: String {get set}
+    var id: String {get set}
     
+    var difficulties: String {get set}
+    
+    /*
     init (id: String, title: String, symbol: String)
     {
         self.id = id
         self.title = title
         self.symbol = symbol
     }
+     */
 }

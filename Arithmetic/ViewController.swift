@@ -16,6 +16,8 @@ class ViewController: UICollectionViewController
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        ArithmeticManager.Setup()
+        
         ArithmeticManager.AddArithmetic(id: "add", title: "Plus", symbol: "+")
         ArithmeticManager.AddArithmetic(id: "sub", title: "Minus", symbol: "-")
         ArithmeticManager.AddArithmetic(id: "multi", title: "Gånger", symbol: "x")

@@ -14,8 +14,18 @@ class ArithmeticManager: NSObject
 
     class func AddArithmetic(id: String, title: String, symbol: String)
     {
-        let a = Arithmetic(id: id, title: title, symbol: symbol)
+        //let a = Arithmetic(id: id, title: title, symbol: symbol)
         
-        arithmetics.append(a)
+        //arithmetics.append(a)
+    }
+    
+    
+    class func Setup()
+    {
+        let add = Addition()
+        let sub = Subtraction()
+        
+        arithmetics.append(add)
+        arithmetics.append(sub)
     }
 }
