@@ -85,7 +85,33 @@ class DifficultyViewController: UICollectionViewController
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if (segue.identifier == "toQuestionnaireView")
+        {
+            let cell = sender as! DifficultyCell
+            let questionView = segue.destination as! QuestionViewController
+            
+            questionView.preDifficulty = cell.title.text
+            
+            //let test = ""
+        }
+    }
     
+    /*
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+     {
+        if (segue.identifier == "toDifficultyView")
+        {
+            let cell = sender as! ArithmeticCell
+            let difficultyView = segue.destination as! DifficultyViewController
+     
+            difficultyView.preArithmetic = cell.arithmetic
+        }
+     }
+     */
+ 
+ 
 
     // MARK: UICollectionViewDelegate
 

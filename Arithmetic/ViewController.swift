@@ -51,7 +51,7 @@ class ViewController: UICollectionViewController
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        if (segue.identifier == "difficultySelector")
+        if (segue.identifier == "toDifficultyView")
         {
             let cell = sender as! ArithmeticCell
             let difficultyView = segue.destination as! DifficultyViewController
