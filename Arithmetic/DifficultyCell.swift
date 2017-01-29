@@ -1,5 +1,5 @@
 //
-//  ArithmeticCell.swift
+//  DifficultyCell.swift
 //  Arithmetic
 //
 //  Created by Nicklas on 2017-01-29.
@@ -8,10 +8,7 @@
 
 import UIKit
 
-class ArithmeticCell: UICollectionViewCell
+class DifficultyCell: UICollectionViewCell
 {
-    @IBOutlet weak var symbol: UILabel!
     @IBOutlet weak var title: UILabel!
-    
-    var arithmetic:Arithmetic?
 }

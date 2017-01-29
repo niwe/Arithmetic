@@ -32,8 +32,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9D-Vd-FA0">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9D-Vd-FA0">
                                             <rect key="frame" x="8" y="8" width="164" height="121"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="120"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -49,16 +50,15 @@
                                 <constraints>
                                     <constraint firstAttribute="bottomMargin" secondItem="0BF-dI-Mbh" secondAttribute="bottom" constant="17" id="4bs-ji-QWQ"/>
                                     <constraint firstItem="0BF-dI-Mbh" firstAttribute="centerX" secondItem="Akw-xd-BQn" secondAttribute="centerX" id="eMc-vm-Q54"/>
-                                    <constraint firstItem="N9D-Vd-FA0" firstAttribute="centerX" secondItem="Akw-xd-BQn" secondAttribute="centerX" id="zo9-B2-VDa"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="arithmetic" destination="N9D-Vd-FA0" id="xWy-Cl-gQ6"/>
+                                    <outlet property="symbol" destination="N9D-Vd-FA0" id="vhV-AZ-0kb"/>
                                     <outlet property="title" destination="0BF-dI-Mbh" id="HMh-bu-7Gx"/>
-                                    <segue destination="2Ry-lX-6R5" kind="show" id="VMJ-wd-pbx"/>
+                                    <segue destination="2Ry-lX-6R5" kind="show" identifier="difficultySelector" id="VMJ-wd-pbx"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="t10-Tc-iJG">
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="arithmeticHeader" id="t10-Tc-iJG">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -82,23 +82,81 @@
             </objects>
             <point key="canvasLocation" x="1076" y="138.98050974512745"/>
         </scene>
-        <!--QuestionView-->
+        <!--DifficultyView-->
         <scene sceneID="MOl-He-mBT">
             <objects>
-                <viewController title="QuestionView" id="2Ry-lX-6R5" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="01O-kv-LUK"/>
-                        <viewControllerLayoutGuide type="bottom" id="p9m-cY-QNv"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="goO-VT-bfW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gAx-4X-6J1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController title="DifficultyView" id="2Ry-lX-6R5" customClass="DifficultyViewController" customModule="Arithmetic" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ohi-HS-HcQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="F2I-EK-2GP">
+                            <size key="itemSize" width="100" height="100"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="difficultyCell" id="tYo-ns-agR">
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gct-v0-3kM">
+                                            <rect key="frame" x="8" y="8" width="84" height="84"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <connections>
+                                    <segue destination="YlZ-rm-yYL" kind="show" id="xeE-2V-CT9"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="2Ry-lX-6R5" id="y2t-BW-4tJ"/>
+                            <outlet property="delegate" destination="2Ry-lX-6R5" id="BED-Xi-XH4"/>
+                        </connections>
+                    </collectionView>
+                </viewController>
             </objects>
-            <point key="canvasLocation" x="1975" y="139"/>
+            <point key="canvasLocation" x="1973.5999999999999" y="138.98050974512745"/>
+        </scene>
+        <!--QuestionView-->
+        <scene sceneID="Reb-Q5-w26">
+            <objects>
+                <viewController title="QuestionView" id="YlZ-rm-yYL" customClass="QuestionViewController" customModule="Arithmetic" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="AdE-N6-mBb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LlQ-if-hyG">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="questionCell" id="BId-7P-u3Z">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                    </collectionView>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VHW-e5-6l8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2884" y="139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iof-ce-GMU">

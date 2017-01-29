@@ -10,8 +10,7 @@ import UIKit
 
 class ViewController: UICollectionViewController
 {
-    let array = ["item1", "item2", "item3", "item4"]
-    
+
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -21,21 +20,20 @@ class ViewController: UICollectionViewController
         ArithmeticManager.AddArithmetic(id: "sub", title: "Minus", symbol: "-")
         ArithmeticManager.AddArithmetic(id: "multi", title: "Gånger", symbol: "x")
         ArithmeticManager.AddArithmetic(id: "div", title: "Delat", symbol: "/")
-        
     }
 
+    
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        return array.count
+        return ArithmeticManager.arithmetics.count
     }
-    
-    
     
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
@@ -44,9 +42,22 @@ class ViewController: UICollectionViewController
         
         let arithmetic = ArithmeticManager.arithmetics[indexPath.item]
         cell.title.text = arithmetic.title
-        cell.arithmetic.text = arithmetic.symbol
+        cell.symbol.text = arithmetic.symbol
+        cell.arithmetic = arithmetic
         
         return cell
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if (segue.identifier == "difficultySelector")
+        {
+            let cell = sender as! ArithmeticCell
+            let difficultyView = segue.destination as! DifficultyViewController
+            
+            difficultyView.preArithmetic = cell.arithmetic
+        }
     }
 }
 
