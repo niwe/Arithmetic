@@ -11,4 +11,5 @@ import UIKit
 class DifficultyCell: UICollectionViewCell
 {
     @IBOutlet weak var title: UILabel!
+    var difficulty: Difficulty?
 }

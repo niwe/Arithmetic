@@ -24,8 +24,10 @@ class ArithmeticManager: NSObject
     {
         let add = Addition()
         let sub = Subtraction()
+        let multi = Multiplication()
         
         arithmetics.append(add)
         arithmetics.append(sub)
+        arithmetics.append(multi)
     }
 }

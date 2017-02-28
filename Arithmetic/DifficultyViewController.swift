@@ -30,17 +30,20 @@ class DifficultyViewController: UICollectionViewController
         
         //self.title = preArithmetic?.title
         
+        
+        preArithmetic!.difficulties.removeAll()
+        preArithmetic!.questionHistory.removeAll()
+        
+        
+        
         if (preArithmetic?.id == "multi")
         {
-            DifficultyManager.AddDifficulty(title: "1")
-            DifficultyManager.AddDifficulty(title: "2")
-            DifficultyManager.AddDifficulty(title: "3")
-            DifficultyManager.AddDifficulty(title: "4")
-            DifficultyManager.AddDifficulty(title: "5")
-            DifficultyManager.AddDifficulty(title: "6")
-            DifficultyManager.AddDifficulty(title: "7")
-            DifficultyManager.AddDifficulty(title: "8")
-            DifficultyManager.AddDifficulty(title: "9")
+            preArithmetic!.setup()
+            
+            //for difficulty in (preArithmetic?.difficulties)!
+            //{
+             //   DifficultyManager.AddDifficulty(id, title)
+            //}
         }
     }
 
@@ -72,7 +75,8 @@ class DifficultyViewController: UICollectionViewController
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
         // #warning Incomplete implementation, return the number of items
-        return DifficultyManager.difficulty.count
+        //return DifficultyManager.difficulty.count
+        return preArithmetic!.difficulties.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
@@ -80,7 +84,11 @@ class DifficultyViewController: UICollectionViewController
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "customcell2", for: indexPath) as! DifficultyCell
     
         // Configure the cell
-        cell.title.text = DifficultyManager.difficulty[indexPath.item]
+        //cell.title.text = DifficultyManager.difficulty[indexPath.item].title
+        //cell.difficulty = DifficultyManager.difficulty[indexPath.item]
+        cell.title.text = preArithmetic!.difficulties[indexPath.item].title
+        cell.difficulty = preArithmetic!.difficulties[indexPath.item]
+        
         
         return cell
     }
@@ -92,7 +100,7 @@ class DifficultyViewController: UICollectionViewController
             let cell = sender as! DifficultyCell
             let questionView = segue.destination as! QuestionViewController
             
-            questionView.preDifficulty = cell.title.text
+            questionView.preDifficulty = cell.difficulty
             
             //let test = ""
         }

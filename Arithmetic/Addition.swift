@@ -13,5 +13,13 @@ class Addition: Arithmetic
     var title = "Plus"
     var id = "add"
     var symbol = "+"
-    var difficulties = ["5", "10", "20", "50", "100", "200", "500", "1000", "10000"]
+    //var difficulties = ["5", "10", "20", "50", "100", "200", "500", "1000", "10000"]
+    
+    var difficulties: [Difficulty] = []
+    var questionHistory: [(hash: String, (firstNumber:Int, secondNumber:Int))] = []
+    
+    func setup() -> ()
+    {
+        
+    }
 }

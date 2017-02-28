@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35178F391E65FA7A002EAD65 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35178F381E65FA7A002EAD65 /* Question.swift */; };
 		3546CB571E3E36F300352AAC /* DifficultyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3546CB561E3E36F300352AAC /* DifficultyManager.swift */; };
 		3546CB591E3E4B8D00352AAC /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3546CB581E3E4B8D00352AAC /* QuestionViewController.swift */; };
 		3546CB5C1E3E7C0300352AAC /* Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3546CB5B1E3E7C0300352AAC /* Addition.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		35178F381E65FA7A002EAD65 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		3546CB561E3E36F300352AAC /* DifficultyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DifficultyManager.swift; sourceTree = "<group>"; };
 		3546CB581E3E4B8D00352AAC /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		3546CB5B1E3E7C0300352AAC /* Addition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Addition.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 		357EB2471E3DD49D000945F4 /* Arithmetic */ = {
 			isa = PBXGroup;
 			children = (
+				35178F381E65FA7A002EAD65 /* Question.swift */,
 				3546CB5A1E3E7BD300352AAC /* Arithmetics */,
 				357EB2481E3DD49D000945F4 /* AppDelegate.swift */,
 				357EB2781E3E1440000945F4 /* Arithmetic.swift */,
@@ -308,6 +311,7 @@
 				3546CB5E1E3E816600352AAC /* Subtraction.swift in Sources */,
 				357EB27D1E3E18FB000945F4 /* DifficultyCell.swift in Sources */,
 				3546CB591E3E4B8D00352AAC /* QuestionViewController.swift in Sources */,
+				35178F391E65FA7A002EAD65 /* Question.swift in Sources */,
 				3546CB571E3E36F300352AAC /* DifficultyManager.swift in Sources */,
 				3546CB601E3E84E100352AAC /* Multiplication.swift in Sources */,
 				357EB2491E3DD49D000945F4 /* AppDelegate.swift in Sources */,

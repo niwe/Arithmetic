@@ -14,8 +14,11 @@ protocol Arithmetic
     var symbol: String {get set}
     var id: String {get set}
     
-    var difficulties: [String] {get set}
-    
+    //var difficulties: [String] {get set}
+    var difficulties: [Difficulty] {get set}
+    var questionHistory: [(hash: String, (firstNumber:Int, secondNumber:Int))] {get set}
+
+    func setup() -> ()
     /*
     init (id: String, title: String, symbol: String)
     {

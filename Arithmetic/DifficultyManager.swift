@@ -10,12 +10,27 @@ import UIKit
 
 class DifficultyManager: NSObject
 {
-    static var difficulty = [String]()
+    static var difficulty = [Difficulty]()
     
-    class func AddDifficulty(title: String)
+    class func AddDifficulty(_ id: String, _ title: String, function: @escaping () -> [(used: Int, (firstNumber:Int, secondNumber:Int))])
     {
-        let d = title
+        let d = Difficulty(id, title, function)
         
         difficulty.append(d)
+    }
+}
+
+
+class Difficulty
+{
+    var id: String
+    var title: String
+    var function: () -> [(used: Int, (firstNumber:Int, secondNumber:Int))]
+    
+    init (_ id: String, _ title: String, _ function: @escaping () -> [(used: Int, (firstNumber:Int, secondNumber:Int))])
+    {
+        self.id = id
+        self.title = title
+        self.function = function
     }
 }
