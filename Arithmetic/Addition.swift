@@ -22,4 +22,8 @@ class Addition: Arithmetic
     {
         
     }
+    
+    func calculate(question: Question) -> Int {
+        return 0
+    }
 }

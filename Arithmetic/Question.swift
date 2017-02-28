@@ -13,6 +13,7 @@ class Question
     var tokens: [String] = []
     var useCount: Int = 0
     
+    
     func renderQuestion() -> String
     {
         var question = ""

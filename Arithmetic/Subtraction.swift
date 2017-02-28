@@ -22,4 +22,8 @@ class Subtraction: Arithmetic
     {
         
     }
+    
+    func calculate(question: Question) -> Int {
+        return 0
+    }
 }

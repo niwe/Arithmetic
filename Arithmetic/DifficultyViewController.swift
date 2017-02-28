@@ -101,6 +101,7 @@ class DifficultyViewController: UICollectionViewController
             let questionView = segue.destination as! QuestionViewController
             
             questionView.preDifficulty = cell.difficulty
+            questionView.arithmetic = preArithmetic
             
             //let test = ""
         }

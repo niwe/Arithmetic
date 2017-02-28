@@ -12,7 +12,7 @@ class DifficultyManager: NSObject
 {
     static var difficulty = [Difficulty]()
     
-    class func AddDifficulty(_ id: String, _ title: String, function: @escaping () -> [(used: Int, (firstNumber:Int, secondNumber:Int))])
+    class func AddDifficulty(_ id: String, _ title: String, function: @escaping () -> [Question])
     {
         let d = Difficulty(id, title, function)
         
@@ -25,9 +25,9 @@ class Difficulty
 {
     var id: String
     var title: String
-    var function: () -> [(used: Int, (firstNumber:Int, secondNumber:Int))]
+    var function: () -> [Question]
     
-    init (_ id: String, _ title: String, _ function: @escaping () -> [(used: Int, (firstNumber:Int, secondNumber:Int))])
+    init (_ id: String, _ title: String, _ function: @escaping () -> [Question])
     {
         self.id = id
         self.title = title

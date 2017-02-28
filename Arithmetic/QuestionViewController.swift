@@ -10,34 +10,34 @@ import UIKit
 
 class QuestionViewController: UIViewController
 {
+    var arithmetic: Arithmetic?
     var preDifficulty: Difficulty?
-    //var currentQuestion: Question?
-    var questions: [(used: Int, (firstNumber:Int, secondNumber:Int))] = []
+    var currentQuestion: Question?
+    var questions: [Question] = []
     
     @IBOutlet weak var textQuestion: UILabel!
     @IBOutlet weak var inputAnswer: UITextField!
     @IBOutlet var doneButton: UIButton!
     @IBOutlet weak var textResult: UILabel!
-    
+    @IBOutlet weak var textPassCount: UILabel!
+    @IBOutlet weak var textFailCount: UILabel!
     @IBOutlet weak var textNumber2: UILabel!
     @IBOutlet weak var textNumber1: UILabel!
+    
+    @IBOutlet weak var textReaction: UILabel!
     override func viewDidLoad()
     {
         super.viewDidLoad()
 
         questions = preDifficulty!.function()
         
+        //inputAnswer.resignFirstResponder()
+        
+        inputAnswer.becomeFirstResponder()
         
         
-        let question = getNewQuestion()
-        
-        // Do any additional setup after loading the view.
-        
-        //textQuestion.text = preDifficulty!.title
-        
-        textNumber1.text = "\(question.firstNumber)"
-        textNumber2.text = "\(question.secondNumber)"
-        textQuestion.text = "x"
+        getNewQuestion()
+        textQuestion.text = currentQuestion!.renderQuestion()
     }
 
     override func didReceiveMemoryWarning()
@@ -48,18 +48,55 @@ class QuestionViewController: UIViewController
     
     @IBAction func doneButtonClick(_ sender: Any)
     {
-        
-        
-        
-        let question = getNewQuestion()
-        textNumber1.text = "\(question.firstNumber)"
-        textNumber2.text = "\(question.secondNumber)"
-        textQuestion.text = "x"
+        checkAnswer()
     }
     
-    func getNewQuestion() -> (firstNumber:Int, secondNumber:Int)
+    @IBAction func inputPrimaryActionTriggered(_ sender: Any)
     {
-        let questionUsage = questions.map({$0.used})
+        checkAnswer()
+    }
+    
+    func checkAnswer()
+    {
+        let answer = Int(inputAnswer.text!)
+        
+        if answer != nil
+        {
+            let product = arithmetic!.calculate(question: currentQuestion!)
+        
+            if product == Int(answer!)
+            {
+                let passCount = Int(textPassCount.text!)!
+            
+                textResult.textColor = UIColor.green
+                textResult.text = "Rätt"
+                textReaction.text = "🙂"
+                textPassCount.text = String(passCount + 1)
+            }
+            else
+            {
+                let failCount = Int(textFailCount.text!)!
+            
+                textResult.textColor = UIColor.red
+                textResult.text = "Fel\n(\(currentQuestion!.renderQuestion()) = \(answer!))"
+                textReaction.text = "🙁"
+                textFailCount.text = String(failCount + 1)
+            }
+        
+            inputAnswer.text = ""
+        
+            getNewQuestion()
+            textQuestion.text = currentQuestion!.renderQuestion()
+        }
+        else
+        {
+            textReaction.text = "🤔"
+        }
+    }
+    
+    func getNewQuestion()
+    {
+        let questionUsage = questions.map({$0.useCount})
         var filter = questionUsage.max()!
         
         if questionUsage.max() == questionUsage.min()
@@ -69,14 +106,12 @@ class QuestionViewController: UIViewController
         
         
         let q = questions.filter({
-            $0.used < filter
+            $0.useCount < filter
         })
         
         let rnd = Int(arc4random_uniform(UInt32(q.count)))
         
-        let question = questions[rnd].1
-        
-        return question
+        currentQuestion = questions[rnd]
     }
     /*
     // MARK: - Navigation

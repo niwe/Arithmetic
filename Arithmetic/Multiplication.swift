@@ -32,26 +32,59 @@ class Multiplication: Arithmetic
     }
     
     
-    func questionFactory(_ factor: Int, _ lowestDigit: Int, _ highestDigit: Int) -> () -> [(used: Int, (firstNumber:Int, secondNumber:Int))]
+    func calculate(question: Question) -> Int
     {
-        func generate() -> [(used: Int, (firstNumber:Int, secondNumber:Int))]
+        var tokens: [Int] = []
+        //let b:Int? = Int(secondText.text)
+        
+        for var token in question.tokens
+        {
+            let number:Int? = Int(token)
+            
+            if (number != nil)
+            {
+                tokens.append(number!)
+            }
+        }
+        
+        let product = tokens.reduce(1, *)
+        
+        return product
+    }
+    
+    
+    func questionFactory(_ factor: Int, _ lowestDigit: Int, _ highestDigit: Int) -> () -> [Question]
+    {
+        func generate() -> [Question]
         {
             var firstFactor: Int
             var secondFactor: Int
-            var questions: [(used: Int, (firstNumber:Int, secondNumber:Int))] = []
+            var questions: [Question] = []
             
             firstFactor = factor
             
             for secondFactor in lowestDigit...highestDigit
             {
-                questions.append((0, (firstFactor, secondFactor)))
+                let q = Question()
+                q.tokens.append(String(firstFactor))
+                q.tokens.append("x")
+                q.tokens.append(String(secondFactor))
+                
+                questions.append(q)
+                //questions.append((0, (firstFactor, secondFactor)))
             }
             
             secondFactor = factor
             
             for firstFactor in lowestDigit...highestDigit
             {
-                questions.append((0, (firstFactor, secondFactor)))
+                let q = Question()
+                q.tokens.append(String(firstFactor))
+                q.tokens.append("x")
+                q.tokens.append(String(secondFactor))
+                
+                questions.append(q)
+                //questions.append((0, (firstFactor, secondFactor)))
             }
         
             return questions
@@ -59,38 +92,4 @@ class Multiplication: Arithmetic
         
         return generate
     }
-    
-    
-    func questionFactory3(_ factor: Int) -> () -> (firstNumber:Int, secondNumber:Int)
-    {
-        func question() -> (firstNumber:Int, secondNumber:Int)
-        {
-            let constant: Int = factor
-            var firstNumber: Int
-            var secondNumber: Int
-
-                if Int(arc4random_uniform(2)) > 0
-                {
-                    firstNumber = constant
-                    secondNumber = Int(arc4random_uniform(10))
-                }
-                else
-                {
-                    firstNumber = Int(arc4random_uniform(10))
-                    secondNumber = constant
-                }
-            
-            questionHistory.append((" ", (firstNumber: firstNumber, secondNumber: secondNumber)))
-    
-            return (firstNumber, secondNumber)
-        }
-        
-        //let q = question
-        
-        //questionHistory.append(q())
-        
-        return question
-        //return (firstNumber, secondNumber)
-    }
-
 }

@@ -19,6 +19,8 @@ protocol Arithmetic
     var questionHistory: [(hash: String, (firstNumber:Int, secondNumber:Int))] {get set}
 
     func setup() -> ()
+    
+    func calculate(question: Question) -> Int
     /*
     init (id: String, title: String, symbol: String)
     {
