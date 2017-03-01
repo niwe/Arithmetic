@@ -35,16 +35,17 @@ class DifficultyViewController: UICollectionViewController
         preArithmetic!.questionHistory.removeAll()
         
         
+        self.title = "Välj nivå"
         
-        if (preArithmetic?.id == "multi")
-        {
+        
+        
             preArithmetic!.setup()
             
             //for difficulty in (preArithmetic?.difficulties)!
             //{
              //   DifficultyManager.AddDifficulty(id, title)
             //}
-        }
+        
     }
 
     override func didReceiveMemoryWarning()
@@ -86,7 +87,7 @@ class DifficultyViewController: UICollectionViewController
         // Configure the cell
         //cell.title.text = DifficultyManager.difficulty[indexPath.item].title
         //cell.difficulty = DifficultyManager.difficulty[indexPath.item]
-        cell.title.text = preArithmetic!.difficulties[indexPath.item].title
+        cell.title.text = preArithmetic!.difficulties[indexPath.item].name
         cell.difficulty = preArithmetic!.difficulties[indexPath.item]
         
         

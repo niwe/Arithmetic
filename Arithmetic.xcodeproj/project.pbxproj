@@ -25,6 +25,7 @@
 		357EB27B1E3E1462000945F4 /* ArithmeticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357EB27A1E3E1462000945F4 /* ArithmeticManager.swift */; };
 		357EB27D1E3E18FB000945F4 /* DifficultyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357EB27C1E3E18FB000945F4 /* DifficultyCell.swift */; };
 		357EB27F1E3E1A5B000945F4 /* DifficultyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357EB27E1E3E1A5B000945F4 /* DifficultyViewController.swift */; };
+		35B071B91E66A70B0018698C /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B071B81E66A70B0018698C /* UIColorExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		357EB27A1E3E1462000945F4 /* ArithmeticManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArithmeticManager.swift; sourceTree = "<group>"; };
 		357EB27C1E3E18FB000945F4 /* DifficultyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DifficultyCell.swift; sourceTree = "<group>"; };
 		357EB27E1E3E1A5B000945F4 /* DifficultyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DifficultyViewController.swift; sourceTree = "<group>"; };
+		35B071B81E66A70B0018698C /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 				357EB24F1E3DD49D000945F4 /* Assets.xcassets */,
 				357EB2511E3DD49D000945F4 /* LaunchScreen.storyboard */,
 				357EB2541E3DD49D000945F4 /* Info.plist */,
+				35B071B81E66A70B0018698C /* UIColorExtensions.swift */,
 			);
 			path = Arithmetic;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				357EB27B1E3E1462000945F4 /* ArithmeticManager.swift in Sources */,
+				35B071B91E66A70B0018698C /* UIColorExtensions.swift in Sources */,
 				357EB2791E3E1440000945F4 /* Arithmetic.swift in Sources */,
 				357EB2771E3E1031000945F4 /* ArithmeticCell.swift in Sources */,
 				357EB27F1E3E1A5B000945F4 /* DifficultyViewController.swift in Sources */,

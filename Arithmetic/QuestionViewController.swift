@@ -14,6 +14,13 @@ class QuestionViewController: UIViewController
     var preDifficulty: Difficulty?
     var currentQuestion: Question?
     var questions: [Question] = []
+    var passStreak: Int = 0
+    var failStreak: Int = 0
+    var passStreakWas: Int = 0
+    var failStreakWas: Int = 0
+    
+    var failColor: UIColor = UIColor(red:0.83, green:0.10, blue:0.10, alpha:1.0)
+    var passColor: UIColor = UIColor(red:0.11, green:0.83, blue:0.10, alpha:1.0)
     
     @IBOutlet weak var textQuestion: UILabel!
     @IBOutlet weak var inputAnswer: UITextField!
@@ -25,10 +32,21 @@ class QuestionViewController: UIViewController
     @IBOutlet weak var textNumber1: UILabel!
     
     @IBOutlet weak var textReaction: UILabel!
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
 
+        self.title = preDifficulty!.title
+        
+        textResult.text = ""
+        inputAnswer.text = ""
+        
+        inputAnswer.layer.cornerRadius = 8.0
+        inputAnswer.layer.masksToBounds = true
+        inputAnswer.layer.borderColor = UIColor( red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0 ).cgColor
+        inputAnswer.layer.borderWidth = 1
+        
         questions = preDifficulty!.function()
         
         //inputAnswer.resignFirstResponder()
@@ -36,10 +54,35 @@ class QuestionViewController: UIViewController
         inputAnswer.becomeFirstResponder()
         
         
+        
+        
+        let tapRecognizer = UITapGestureRecognizer()
+        tapRecognizer.addTarget(self, action: #selector(QuestionViewController.didTapView))
+        self.view.addGestureRecognizer(tapRecognizer)
+        
+        
+        
         getNewQuestion()
         textQuestion.text = currentQuestion!.renderQuestion()
     }
-
+    
+    @IBAction func editingDidEndTriggered(_ sender: Any)
+    {
+    }
+    
+    func textFieldShouldReturn(textField: UITextField!) -> Bool
+    {
+        self.view.endEditing(true);
+        return false;
+    }
+    
+    func didTapView()
+    {
+        checkAnswer()
+        //self.view.endEditing(true)
+        inputAnswer.becomeFirstResponder()
+    }
+    
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
@@ -67,20 +110,125 @@ class QuestionViewController: UIViewController
             if product == Int(answer!)
             {
                 let passCount = Int(textPassCount.text!)!
+                passStreak += 1
+                passStreakWas = passStreak
+                failStreak = 0
             
-                textResult.textColor = UIColor.green
+                textResult.textColor = passColor
                 textResult.text = "Rätt"
-                textReaction.text = "🙂"
                 textPassCount.text = String(passCount + 1)
+                
+                if passStreak > 99
+                {
+                    textReaction.text = "😱"
+                }
+                else if passStreak > 49
+                {
+                    textReaction.text = "🤓"
+                }
+                else if passStreak > 19
+                {
+                    textReaction.text = "😎"
+                }
+                else if passStreak > 10
+                {
+                    textReaction.text = "😁"
+                }
+                else if passStreak > 7
+                {
+                    textReaction.text = "😀"
+                }
+                else if passStreak > 4
+                {
+                    if failStreakWas > 1
+                    {
+                        textReaction.text = "🙂"
+                    }
+                    else
+                    {
+                        textReaction.text = "😀"
+                    }
+                }
+                else
+                {
+                    if failStreakWas > 9
+                    {
+                        textReaction.text = "😮"
+                        failStreakWas = 9
+                    }
+                    else if failStreakWas > 6
+                    {
+                        textReaction.text = "😕"
+                        failStreakWas = 6
+                    }
+                    else if failStreakWas > 3
+                    {
+                        textReaction.text = "😐"
+                        failStreakWas = 3
+                    }
+                    else
+                    {
+                        textReaction.text = "🙂"
+                    }
+                }
             }
             else
             {
                 let failCount = Int(textFailCount.text!)!
+                failStreak += 1
+                failStreakWas = failStreak
+                passStreak = 0
             
-                textResult.textColor = UIColor.red
-                textResult.text = "Fel\n(\(currentQuestion!.renderQuestion()) = \(answer!))"
-                textReaction.text = "🙁"
+                textResult.textColor = failColor
+                textResult.text = "Fel\n(\(textQuestion.text!) = \(product))"
                 textFailCount.text = String(failCount + 1)
+                
+                if failStreak == 66
+                {
+                    textReaction.text = "👿"
+                }
+                else if failStreak > 9
+                {
+                    textReaction.text = "😵"
+                }
+                else if failStreak > 5
+                {
+                    textReaction.text = "😣"
+                }
+                else if failStreak > 2
+                {
+                    textReaction.text = "😩"
+                }
+                else if failStreak > 1
+                {
+                    if passStreakWas > 49
+                    {
+                        textReaction.text = "😭"
+                    }
+                    else if passStreakWas > 9
+                    {
+                        textReaction.text = "😞"
+                    }
+                    else
+                    {
+                        textReaction.text = "☹️"
+                    }
+                }
+                else
+                {
+                    if passStreakWas > 49
+                    {
+                        textReaction.text = "😤"
+                    }
+                    else if passStreakWas > 9
+                    {
+                        textReaction.text = "😳"
+                    }
+                    else
+                    {
+                        textReaction.text = "🙁"
+                    }
+                }
             }
         
             inputAnswer.text = ""
@@ -98,21 +246,34 @@ class QuestionViewController: UIViewController
     {
         let questionUsage = questions.map({$0.useCount})
         var filter = questionUsage.max()!
+        var rnd: Int = 0
         
         if questionUsage.max() == questionUsage.min()
         {
             filter += 1
         }
         
-        
         let q = questions.filter({
             $0.useCount < filter
         })
         
-        let rnd = Int(arc4random_uniform(UInt32(q.count)))
+        repeat
+        {
+            rnd = Int(arc4random_uniform(UInt32(q.count)))
+        }
+        while (q[rnd] === currentQuestion)
         
-        currentQuestion = questions[rnd]
+        self.title = String(filter)
+        
+        currentQuestion = q[rnd]
     }
+    
+    
+    
+    
+    
+    
+    
     /*
     // MARK: - Navigation
 
